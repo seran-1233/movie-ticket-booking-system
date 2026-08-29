@@ -1,0 +1,227 @@
+/* ============================================
+   CineVerse — Admin Dashboard Styles
+   ============================================ */
+
+.admin-page {
+    padding: var(--space-xl) 0 var(--space-3xl);
+}
+
+.admin-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: var(--space-2xl);
+}
+
+.admin-title {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    font-size: var(--text-3xl);
+    font-weight: 900;
+    margin-bottom: var(--space-xs);
+}
+
+.admin-actions {
+    display: flex;
+    gap: var(--space-sm);
+}
+
+/* ─── Stats Grid ─── */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: var(--space-md);
+    margin-bottom: var(--space-2xl);
+}
+
+/* ─── Charts ─── */
+.charts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-2xl);
+}
+
+.chart-card {
+    padding: var(--space-xl) !important;
+}
+
+.chart-title {
+    font-size: var(--text-base);
+    font-weight: 700;
+    margin-bottom: var(--space-lg);
+}
+
+.chart-container {
+    position: relative;
+    height: 280px;
+}
+
+.chart-empty {
+    text-align: center;
+    padding: var(--space-2xl) 0;
+    font-size: var(--text-sm);
+}
+
+/* ─── Overview Grid ─── */
+.overview-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-2xl);
+}
+
+.overview-card {
+    padding: var(--space-xl) !important;
+}
+
+.overview-title {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: var(--text-base);
+    font-weight: 700;
+    margin-bottom: var(--space-lg);
+}
+
+.overview-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.overview-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-sm);
+    border-radius: var(--radius-md);
+    transition: background var(--transition-fast);
+}
+
+.overview-item:hover {
+    background: var(--glass-bg-light);
+}
+
+.overview-poster {
+    width: 40px;
+    height: 56px;
+    border-radius: var(--radius-sm);
+    object-fit: cover;
+}
+
+.overview-item-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.overview-item-name {
+    font-size: var(--text-sm);
+    font-weight: 600;
+}
+
+.overview-item-meta {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+}
+
+.overview-empty {
+    text-align: center;
+    padding: var(--space-2xl) 0;
+}
+
+/* ─── Tables ─── */
+.bookings-table-wrap,
+.showtimes-table-wrap {
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.bookings-table-wrap::-webkit-scrollbar,
+.showtimes-table-wrap::-webkit-scrollbar {
+    display: none;
+}
+
+.bookings-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.bookings-table th {
+    text-align: left;
+    font-size: var(--text-xs);
+    font-weight: 600;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: var(--space-sm) var(--space-md);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    white-space: nowrap;
+}
+
+.bookings-table td {
+    font-size: var(--text-sm);
+    padding: var(--space-sm) var(--space-md);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    white-space: nowrap;
+    color: var(--color-text-secondary);
+}
+
+.bookings-table tbody tr:hover {
+    background: var(--glass-bg-light);
+}
+
+.bookings-table code {
+    font-size: var(--text-xs);
+    color: var(--color-accent-primary-light);
+    background: rgba(124, 58, 237, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* ─── Showtime Management ─── */
+.showtimes-management {
+    padding: var(--space-xl) !important;
+    margin-bottom: var(--space-2xl);
+}
+
+.showtimes-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 1200px) {
+    .stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 1024px) {
+
+    .charts-grid,
+    .overview-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .admin-header {
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+
+    .admin-title {
+        font-size: var(--text-2xl);
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

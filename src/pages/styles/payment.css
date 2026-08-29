@@ -1,0 +1,221 @@
+/* ============================================
+   CineVerse — Payment Page Styles
+   ============================================ */
+
+.payment-page {
+    padding-bottom: var(--space-3xl);
+}
+
+.payment-layout {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: var(--space-2xl);
+    padding-top: var(--space-xl);
+}
+
+.payment-title {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    font-size: var(--text-3xl);
+    font-weight: 900;
+    margin-bottom: var(--space-xl);
+}
+
+/* ─── Payment Methods ─── */
+.payment-methods {
+    display: flex;
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+}
+
+.payment-method {
+    flex: 1;
+    padding: var(--space-md) var(--space-lg);
+    background: var(--color-bg-card);
+    border: 2px solid rgba(255, 255, 255, 0.04);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.payment-method:hover {
+    border-color: var(--glass-border);
+}
+
+.payment-method.active {
+    border-color: var(--color-accent-primary);
+    background: rgba(124, 58, 237, 0.08);
+}
+
+.payment-method input {
+    display: none;
+}
+
+.method-content {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.method-icon {
+    font-size: 1.5rem;
+}
+
+.method-name {
+    font-size: var(--text-sm);
+    font-weight: 600;
+}
+
+/* ─── Payment Form ─── */
+.payment-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-lg);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+}
+
+.payment-secure {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-xl);
+}
+
+.payment-submit-btn {
+    width: 100%;
+}
+
+/* ─── Order Summary ─── */
+.order-summary-card {
+    position: sticky;
+    top: 96px;
+}
+
+.order-title {
+    font-size: var(--text-lg);
+    font-weight: 700;
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.order-movie {
+    display: flex;
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-lg);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.order-poster {
+    width: 72px;
+    border-radius: var(--radius-md);
+}
+
+.order-movie-info h4 {
+    font-size: var(--text-base);
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.order-movie-info p {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    margin-bottom: 2px;
+}
+
+.order-details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-lg);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.order-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+}
+
+.order-pricing {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+}
+
+.price-total {
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: var(--space-md);
+    margin-top: var(--space-sm);
+    font-weight: 700;
+    font-size: var(--text-lg) !important;
+    color: var(--color-accent-secondary) !important;
+}
+
+/* ─── Processing Overlay ─── */
+.payment-processing {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: var(--z-modal);
+}
+
+.processing-card {
+    text-align: center;
+    padding: var(--space-3xl) var(--space-2xl);
+    min-width: 360px;
+}
+
+.processing-card .spinner {
+    margin: 0 auto var(--space-xl);
+}
+
+.processing-card h3 {
+    margin-bottom: var(--space-sm);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 1024px) {
+    .payment-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .order-summary-card {
+        position: relative;
+        top: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .payment-methods {
+        flex-direction: column;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
